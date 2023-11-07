@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Verdana', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 10px;
+    background: #d5a6fd;
+}
+
+.wrapper {
+    background: indigo;
+    padding: 20px;
+    border-radius: 7px;
+    width: 800px;
+}
+
+.wrapper form {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper form .url-icon {
+    position: absolute;
+    width: 50px;
+    text-align: center;
+    font-size: 24px;
+    color: indigo;
+    pointer-events: none;
+}
+.wrapper form input {
+    height: 100%;
+    width: 100%;
+    padding: 0 120px 0 45px;
+    border-radius: 7px;
+    border: 2px solid #23163a;
+    font-size: 16px;
+    caret-color: #d5a6fd;
+}
+
+.wrapper form input::placeholder {
+    color: #8c5aa4;
+}
+
+.wrapper form input:valid {
+    border-color: indigo;
+}
+
+form button {
+    position: absolute;
+    right: 5px;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: #fff;
+    background-color: indigo;
+    font-size: 16px;
+    outline: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+form input:valid ~ button{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.wrapper a {
+    color: #ffffff;
+}
+
+.wrapper a:hover {
+    color: #23163a;
+    text-decoration: underline;
+}
+.wrapper .count {
+    margin: 20px 0;
+    display: flex;
+    padding-right: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.count span{
+    font-size: 16px;
+    color: #cb94fa;
+}
+
+.count span span {
+    font-weight: 700;
+}
+
+.wrapper .url-zone {
+    border: 2px solid #cb94fa;
+    border-radius: 7px;
+    margin-bottom: 5px;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.url-zone :is(.title, .links){
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.url-zone li {
+    list-style: none;
+    width: 100%;
+    border-right: 1px solid indigo;
+}
+
+.url-zone .title li {
+    text-align: center;
+    background: #d5a6fd;
+    padding: 10px 0;
+}
+
+.url-zone .links li {
+    align-items: center;
+    justify-content: center;
+    background: #680ca6;
+    padding: 8px 10px;
+    word-break: break-all;
+    color: #d5a6fd;
+}
+
+.url-zone .links li:last-child a:hover{
+    border-radius: 7px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: underline;
+    background: darkred;
+    color: white;
+}
+
+.url-zone li:nth-child(1){
+    max-width: 30%;
+}
+.url-zone li:nth-child(2) {
+    max-width: 45%;
+}
+.url-zone li:nth-child(3){
+    max-width: 11%;
+}
+.url-zone li:nth-child(4) {
+    max-width: 14%;
+}
+
+.blur-effect {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(2px);
+    background: rgba(0, 0, 0, 0.01);
+    display: none;
+}
+
+.popup-box{
+    position: absolute;
+    background: #d5a6fd;
+    padding: 25px;
+    border-radius: 7px;
+    box-shadow:#23163a  0 5px 10px;
+    max-width: 500px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+/* for javascript */
+.popup-box.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+.popup-box .info {
+    color: #23163a;
+    border: 1px solid #23163a;
+    padding: 10px;
+    border-radius: 7px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* for javascript */
+.info .error {
+    color: darkred;
+    border: 1px solid darkred;
+    padding: 10px;
+}
+
+.popup-box form {
+    position: relative;
+    margin-top: 10px;
+}
+
+.popup-box form label {
+    font-size: 16px;
+}
+
+.popup-box form .copy-icon {
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-110%);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+form .copy-icon:hover {
+    color: indigo;
+}
+.popup-box form input {
+    height: 45px;
+    width: 100%;
+    border: 1px solid #23163a;
+    border-radius: 7px;
+    padding: 0 35px 0 15px;
+    margin-top: 3px;
+}
+
+.popup-box form button {
+    position: relative;
+    right: 0;
+    height: 40px;
+    width: 100%;
+    margin-top: 10px;
+}
